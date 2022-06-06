@@ -1,5 +1,5 @@
 {
-  "name": "map-5310-demographics",
+  "name": "map-demographics-subset",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
