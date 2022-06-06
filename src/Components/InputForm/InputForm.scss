@@ -1,0 +1,33 @@
+.custom-option-container {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.drawing-tooltip {
+  width: 150px;
+  position: absolute;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border: 1px solid gray;
+  z-index: 10;
+  border-radius: 10px;
+  font-size: 0.7em;
+  pointer-events: none;
+}
+
+.input-form-container {
+  background-color: white;
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 20px;
+  margin-right: 20px;
+  width: 450px;
+
+  .custom-switch {
+    margin: 7px;
+  }
+}

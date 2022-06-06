@@ -1,0 +1,60 @@
+humanstxt.org/
+# The humans responsible & technology colophon
+==============================================
+
+# TEAM
+
+    Maricopa Association of Governments
+    	Name:  Vern Wolfley
+    	Role: GIS Engineer III
+    	Contact:
+    	Twitter: @vernwolfley
+    	From: Litchfield Park, AZ
+
+        Name:  Jack Fairfield
+        Role: GIS Engineer II
+        Contact:
+        Twitter:
+        From: Tempe, AZ
+
+    	Name:  Jason Howard
+    	Role: GIS Program Manager
+    	Contact:
+    	Twitter:
+    	From: Chandler, AZ
+
+        Name:  Anubhav Bagley
+        Role: Regional Analytics Director
+        Contact:
+        Twitter:
+        From: Phoenix, AZ
+
+# THANKS
+
+
+    Maricopa Association of Governments
+        Jesse Ayers -- @azmag
+        Hanyi Li -- @azmag
+        Peter Burnett -- @azmag
+        Maggie Wong -- @azmag
+        Christian Gort -- @azmag
+        Nicole Funicello -- @azmag
+        Deborah Brown -- @azmag
+        Mark Roberts -- @azmag
+
+
+# TECHNOLOGY COLOPHON
+
+    Standards: JavaScript, HTML5, CSS3
+    Components: Normalize.css, React, Webpack, ArcGIS
+
+# SITE
+
+    Site Name: map-land-use
+    Site URL: https://
+    Version: 0.1.0
+	Last updated: undefined
+    Creation date: 2021-10-03
+	Language: English
+	Doctype: HTML5
+	IDE: VS Code
