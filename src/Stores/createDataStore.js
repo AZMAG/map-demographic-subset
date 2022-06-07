@@ -5,6 +5,7 @@ export function createDataStore() {
     view: null,
     map: null,
     mapLoaded: false,
+    bgLayerView: null,
     orgName: "",
     contactName: "",
     contactEmail: "",

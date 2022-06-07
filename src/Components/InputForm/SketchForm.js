@@ -97,11 +97,9 @@ function SketchForm({ handleBack, handleNext }) {
     }
   })
 
-  async function submitButtonClicked() {
-    if (store.sketchGeometry) {
-      handleNext()
-    }
-  }
+  // async function submitButtonClicked() {
+  //   alert("Submitting...")
+  // }
 
   function resetButtonClicked() {
     store.sketchLayer.removeAll()
@@ -125,6 +123,7 @@ function SketchForm({ handleBack, handleNext }) {
           selected={selected}
           resetButtonClicked={resetButtonClicked}
           sketchGeometry={store.sketchGeometry}
+          // submitButtonClicked={submitButtonClicked}
         />
         <MouseTooltip visible={selected !== null} offsetX={15} offsetY={10}>
           <div className="drawing-tooltip">
@@ -135,18 +134,6 @@ function SketchForm({ handleBack, handleNext }) {
           Click anywhere on the map to start drawing your application's area
         </div>
       </div>
-      <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-        <Button variant="outlined" color="inherit" onClick={handleBack} sx={{ mr: 1 }}>
-          Back
-        </Button>
-        <Box sx={{ flex: "1 1 auto" }} />
-        <Button
-          variant="outlined"
-          disabled={store.sketchGeometry === null}
-          onClick={submitButtonClicked}>
-          Next
-        </Button>
-      </Box>
     </>
   )
 }

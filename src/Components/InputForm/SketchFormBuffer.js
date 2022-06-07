@@ -9,6 +9,7 @@ export default function SketchFormBuffer({
   selected,
   resetButtonClicked,
   sketchGeometry,
+  submitButtonClicked,
 }) {
   function bufferSliderChanged(e) {
     setBuffer(e.target.value)
@@ -22,7 +23,7 @@ export default function SketchFormBuffer({
 
       <div style={{ display: sketchGeometry ? "block" : "none" }}>
         <br />
-        <small>Add Buffer ({isPolygon && "Optional - "}In miles) *</small>
+        <small>Add Buffer ({isPolygon && "Optional - "}In miles)</small>
         <Slider
           size="small"
           disabled={sketchGeometry === null}
@@ -36,9 +37,6 @@ export default function SketchFormBuffer({
           valueLabelDisplay="auto"
         />
         <br />
-        <small style={{ fontType: "italic" }}>
-          * The outline of the buffered area will be submitted
-        </small>
         <hr />
         <Button
           size="small"
@@ -47,6 +45,15 @@ export default function SketchFormBuffer({
           variant="outlined">
           Reset Drawing
         </Button>
+        {/* <Button
+          sx={{ ml: 2 }}
+          size="small"
+          onClick={submitButtonClicked}
+          disabled={sketchGeometry === null}
+          variant="outlined"
+          color="success">
+          Submit
+        </Button> */}
       </div>
     </>
   )

@@ -79,11 +79,11 @@ function CustomReportSelection() {
     if (zoomTo) {
       if (bufferGeometry) {
         store.view.goTo({
-          target: bufferGeometry,
+          target: bufferGeometry.extent.expand(2.5),
         })
       } else if (sketchGeometry) {
         store.view.goTo({
-          target: sketchGeometry,
+          target: sketchGeometry.extent.expand(2.5),
         })
       }
     }

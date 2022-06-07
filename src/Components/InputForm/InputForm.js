@@ -1,10 +1,12 @@
-import InputStepper from "./InputStepper"
+import SketchForm from "./SketchForm"
+import FormFinalScreen from "./FormFinalScreen"
 import "./InputForm.scss"
 
-function CustomLegend({ view, exluLayer, fluLayer, majorDevelopmentsLayer }) {
+function CustomLegend({ view }) {
   return (
     <div className="input-form-container">
-      <InputStepper />
+      <SketchForm />
+      <FormFinalScreen />
     </div>
   )
 }

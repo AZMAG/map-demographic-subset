@@ -1,45 +1,39 @@
 import { useEffect, useState } from "react"
-import Alert from "@mui/material/Alert"
-import Typography from "@mui/material/Typography"
 import LinearProgress from "@mui/material/LinearProgress"
 
 import { useDataStore } from "../../Stores/DataContext"
 import getDemographicsSummaryByGeo from "../../Stores/getDemographicsSummaryByGeo"
-import submitGraphic from "../../Stores/submitGraphic"
 
 import DemographicSummary from "./DemographicSummary"
+import { observer } from "mobx-react-lite"
 
-export default function FormFinalScreen() {
+function FormFinalScreen() {
   const store = useDataStore()
   const [loading, setLoading] = useState(true)
-  const [rows, setRows] = useState([])
+  const [data, setData] = useState([])
 
   useEffect(() => {
     ;(async () => {
-      const res = await submitGraphic(store)
-      const _rows = await getDemographicsSummaryByGeo(store.sketchGeometry, store.bufferGeometry)
-      setRows(_rows)
+      setLoading(true)
+      const _data = await getDemographicsSummaryByGeo(store.sketchGeometry, store.bufferGeometry)
+      setData(_data)
       setLoading(false)
     })()
   }, [store.sketchGeometry, store.bufferGeometry, store])
 
   return (
-    <>
-      <br />
+    <div style={{ display: store.sketchGeometry || store.bufferGeometry ? "" : "none" }}>
       {loading ? (
         <>
-          <h6 variant="h6">Submitting...</h6>
+          <h6 variant="h6">Analyzing...</h6>
           <LinearProgress />
         </>
       ) : (
         <>
-          <Alert severity="success">
-            <Typography>Thank you, MAG has received your submission.</Typography>
-          </Alert>
-          <br />
-          <DemographicSummary rows={rows} />
+          <DemographicSummary data={data} />
         </>
       )}
-    </>
+    </div>
   )
 }
+export default observer(FormFinalScreen)

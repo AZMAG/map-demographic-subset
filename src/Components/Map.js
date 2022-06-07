@@ -10,7 +10,6 @@ import Home from "@arcgis/core/widgets/Home"
 import BasemapGallery from "@arcgis/core/widgets/BasemapGallery"
 
 import AboutWindow from "./AboutWindow"
-import InputForm from "./InputForm/InputForm"
 
 import { useDataStore } from "../Stores/DataContext"
 
@@ -32,7 +31,7 @@ function MainMap() {
 
       const _map = new ArcGISMap({
         basemap: "streets-navigation-vector",
-        layers: [bufferLayer, sketchLayer],
+        layers: [bufferLayer, sketchLayer, acsBlockGroupsLayer],
       })
 
       const _view = new MapView({
@@ -87,7 +86,7 @@ function MainMap() {
 
         render(<AboutWindow />, infoNode)
 
-        _view.ui.add(infoExpand, "bottom-right")
+        _view.ui.add(infoExpand, "bottom-left")
 
         const basemapGalleryExpand = new Expand({
           expandIconClass: "esri-icon-basemap",
@@ -99,6 +98,10 @@ function MainMap() {
 
         store.sketchLayer = sketchLayer
         store.bufferLayer = bufferLayer
+
+        _view.whenLayerView(acsBlockGroupsLayer).then((layerView) => {
+          store.bgLayerView = layerView
+        })
       })()
     }
   }, [store])

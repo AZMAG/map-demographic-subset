@@ -18,14 +18,15 @@ export default function AboutWindow() {
         alt="MAG's Logo"
       />
       <br />
-      <p>Welcome to MAG's 5310 Map Submission Tool</p>
+      <p>Welcome to MAG's Custom Block Group Summary Tool</p>
       <p>
-        This tool is meant to be used in addition to MAG's main application process. After
-        submitting your drawn geography, a demographic estimate will be shown. To get started, fill
-        in your contact info and click "Next".
+        This tool is meant to be used in addition to MAG's AZ Demographics Viewer to get a small
+        subset of demographic fields for use in various grant applications. After selecting an area
+        of interest, the tool will generate a summary of the block groups intersecting the drawn
+        area.
       </p>
       <p>
-        For more information, please contact <b>Hezequias Rocha</b>
+        For more information, please contact <b>Edward Brown</b>
       </p>
     </div>
   )
